@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+p, button {
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -24,20 +29,37 @@ body {
 }
 h1 {
     color: #f2f1ef;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
 }
 /* Main section */
 #main {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    margin-bottom: 2rem;
+}
+#colorPicker {
+    -webkit-appearance: none;
+    width: 60px;
+    height: 60px;
+    border: none;
+}
+#colorPicker:hover {
+    transform: scale(1.1);
 }
 #buttons {
-    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 button {
     color: #f2f1ef;
     background-color: #2b2928;
+    width: 90px;
     padding: 5px 10px;
     border-radius: 12px;
     border: none;
@@ -45,6 +67,13 @@ button {
 button:hover {
     background-color: #4b4745;
     transform: scale(1.1);
+}
+button:active {
+    background-color: #5e5856;
+    transform: scale(1.1);
+}
+.active {
+    border: 4px solid #c5c0bc;
 }
 
 /* Grid section */
@@ -66,7 +95,7 @@ button:hover {
 }
 .slider {
     -webkit-appearance: none;
-    width: 100%;
+    width: 50%;
     height: 25px;
     background: #d3d3d3;
     outline: none;
@@ -74,24 +103,92 @@ button:hover {
     -webkit-transition: .2s;
     transition: opacity .2s;
     margin-bottom: 1rem;
-  }
+}
   
-  .slider:hover {
+.slider:hover {
     opacity: 1;
-  }
+}
   
-  .slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
     height: 25px;
     background-color: #5e5856;
     cursor: pointer;
-  }
+}
   
-  .slider::-moz-range-thumb {
+.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     background-color: #5e5856;
     cursor: pointer;
-  }
+}
+
+/*Footer section*/
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 1rem;
+    width: 100%;
+    font-size: 18px;
+}
+#github {
+    height: 22px;
+    width: auto;
+}
+#github:hover {
+    transform: scale(1.1);
+}
+
+/*Media queries*/
+
+@media(max-width: 950px){
+    body {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    #header {
+        margin-bottom: 3rem;
+    }
+    #grid {
+        width: 400px;
+        height: 400px;
+        
+    }
+    #main {
+        margin-bottom: 3rem;
+    }
+    .slider {
+        width: 50%;
+    }
+}
+
+@media(max-width: 550px){
+    body {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    #header {
+        margin-bottom: 5rem;
+    }
+    #grid {
+        width: 300px;
+        height: 300px;
+        
+    }
+    #main {
+        margin-bottom: 3rem;
+    }
+    #buttons {
+        gap: 1rem;
+    }
+    .slider {
+        width: 80%;
+    }
+}
